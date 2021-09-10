@@ -1,6 +1,6 @@
 <?php include ("inc/header.php"); ?>
 	<div class="container">
-        <?php echo form_open("welcome/adminSignup",['class'=>'form-horizontal']);?>
+        <?php echo form_open("admin/createCoadmin",['class'=>'form-horizontal']);?>
         <?php if($msg = $this -> session -> flashdata('message')):?>
                 <div class="row">
                     <div class="col-md-6">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
         <?php endif;?>
-        <h3> ADMIN REGISTRATION </h3>
+        <h3> Add Co-Admin </h3>
         <hr>
         <div class="row">
            <div class="col-md-6">
@@ -28,6 +28,28 @@
 
                    </div>  
              </div> 
+
+             <div class="row">
+                  <div class="col-md-6">
+                        <div class="form-group">
+                         <label class="col-md-3 control-label"> College Name </label>
+                         <select class="col-lg-9" name="college_id">        
+                          <option value=""> Select </option>
+                          <?php if(count($colleges)):?>
+                            <?php foreach($colleges as $college):?>
+                                <option value=<?php echo $college['college_id']?>><?php echo $college['collegename']?> </option>
+                                
+                        <?php endforeach; ?> 
+                     <?php endif;?>
+                        </select>
+                                </div>
+                  </div>
+             </div>
+                            <div class ="col-md-6">
+                            <?php echo form_error ('collegename', '<div class="text-danger">', '</div>');
+                            ?>
+                  </div>
+             </div>
 
         <div class="row">
            <div class="col-md-6">
@@ -49,7 +71,7 @@
               <div class="form-group">
                          <label class="col-md-3 control-label"> Gender </label>
                          <select class="col-lg-9" name="gender"> 
-                            <option value="select"> Select </option> 
+                            <option value=""> Select </option> 
                             <option value="male"> Male </option> 
                             <option value="female"> Female </option> 
                         </select>
@@ -110,7 +132,7 @@
                     <?php echo form_error('confpwd','<div class="text-danger">','</div>');?>
                    </div>  
              </div>  
-             <button type="submit" class="btn btn-primary"> REGISTER </button>
+             <button type="submit" class="btn btn-primary"> ADD </button>
              <?php echo anchor ("welcome", "BACK", ['class'
 							=> 'btn btn-primary']);?>
      <div>

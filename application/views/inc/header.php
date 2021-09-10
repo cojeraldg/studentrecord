@@ -8,6 +8,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>"/>
 	<script src="<?php echo base_url('assets/js/jquery-3.1.0.js'); ?>"> </script>
 	<script src="<?php echo base_url('assets/js/bootstrap.js'); ?>"> </script>
+	<style type="text/css">
+	.button {
+		color: #2196f3;
+		border: 1px solid #cabdbd;
+		border-radius : 5px ;
+		padding: 2px 10px 2px 10px ;
+	}
+	</style>
 	
 </head>
 <body>

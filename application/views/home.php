@@ -5,10 +5,15 @@
 			 <hr>
 				<div class="my-4"> </div>
 					<div class="row"> 
-						<div class="col-lg-4">
+					<?php if (count($chkAdminExist)):?>
+						
+				<?php else:?>
+					<div class="col-lg-4">
 							<?php echo anchor ("welcome/adminRegister", "ADMIN REGISTER", ['class'
 							=> 'btn btn-primary']);?>
 				</div>
+
+			<?php endif;?>
 				<div class="col-lg-4"> 
 					<?php echo anchor ("welcome/login", "ADMIN LOGIN", ['class'=> 'btn btn-primary']);
 						?>
